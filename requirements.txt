@@ -22,8 +22,8 @@ dill==0.3.7
 distro==1.9.0
 dnspython==2.6.1
 docstring_parser==0.16
-dspy==0.1.5
-dspy-ai==2.4.5
+dspy
+dspy-ai
 email_validator==2.2.0
 exceptiongroup==1.2.1
 executing==2.0.1
@@ -76,8 +76,8 @@ ptyprocess==0.7.0
 pure-eval==0.2.2
 pyarrow==16.1.0
 pyarrow-hotfix==0.6
-pydantic==2.5.0
-pydantic_core==2.14.1
+pydantic==2.7.0
+pydantic_core
 Pygments==2.18.0
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
