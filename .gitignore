@@ -5,6 +5,16 @@ __pycache__/
 # C extensions
 *.so
 
+# Data
+/data/
+
+# Mac OS-specific storage files
+.DS_Store
+
+# vim
+*.swp
+*.swo
+
 # Distribution / packaging
 .Python
 env/
@@ -22,6 +32,8 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+/offer-venv/
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -56,9 +68,14 @@ docs/_build/
 # PyBuilder
 target/
 
-# DotEnv configuration
+# Environments
 .env
-offer-venv
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
 # Database
 *.db
