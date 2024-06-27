@@ -18,7 +18,7 @@ You will find the DSPY Signatures here.
 You'll find the Nuxt application here.
 
 
-# Getting Started
+# To get started, follow these instructions
 1. python3 -m venv venv
 2. source venv/bin/activate
 3. pip install -r requirements.txt
