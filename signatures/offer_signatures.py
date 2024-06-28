@@ -3,9 +3,9 @@ import dspy
 
 
 class ProblemGenerationSignature(dspy.Signature):
-    """Given a job description, list all of the perceived and real problems and obstacles that the job poster could or is currently facing."""
+    """Given the occupation, list all of the perceived and real problems and obstacles that this role could or is currently facing."""
 
-    job_description: str = dspy.InputField()
+    occupation: str = dspy.InputField()
     problems: list[Problem] = dspy.OutputField()
 
 

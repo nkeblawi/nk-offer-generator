@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from data.example_1 import customer_problem
 from modules.modules import *
 from fastapi import FastAPI
+
 load_dotenv()
 
 anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
@@ -14,9 +15,9 @@ client = anthropic.Claude(
 )
 dspy.settings.configure(lm=client)
 
-
-
+# Start the app
 app = FastAPI()
+
 
 @app.post("/generate", response_model=OfferGenerationPack)
 async def generate_offers(job_description: OfferInput) -> OfferGenerationPack:
@@ -29,4 +30,3 @@ async def generate_offers(job_description: OfferInput) -> OfferGenerationPack:
     objections = offer_gen_solutions.objections
     solutions = offer_gen_solutions.solutions
     return offer_gen_solutions
-

@@ -1,6 +1,7 @@
 from signatures.offer_signatures import *
 from langfuse.decorators import observe, langfuse_context
 
+
 class ProblemGenerationModule(dspy.Module):
     def __init__(self, client):
         super().__init__()
@@ -11,10 +12,10 @@ class ProblemGenerationModule(dspy.Module):
         as_type="generation",
         name="problem_generation",
     )
-    def forward(self, job_description) -> list[Problem]:
-        problems = self.problems(job_description=job_description).problems
+    def forward(self, occupation) -> list[Problem]:
+        problems = self.problems(job_description=occupation).problems
         langfuse_context.update_current_observation(
-            input=job_description,
+            input=occupation,
             usage={
                 "input": self.client.history[-1]["response"].usage.input_tokens,
                 "output": self.client.history[-1]["response"].usage.output_tokens,
@@ -150,8 +151,8 @@ class OfferGenerationModule(dspy.Module):
         self.solutions = SolutionGenerationModule(client=client)
 
     @observe(name="OfferGenerationModule")
-    def forward(self, job_description):
-        problems = self.problems(job_description=job_description)
+    def forward(self, occupation):
+        problems = self.problems(occupation=occupation)
         sub_problems = self.sub_problems(problems)
         objections = self.objections(problems, sub_problems)
         solutions = self.solutions(problems, sub_problems, objections)

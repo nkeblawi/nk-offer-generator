@@ -1,7 +1,9 @@
 from pydantic import BaseModel, Field
 
+
 class OfferInput(BaseModel):
-    job_description: str
+    occupation: str
+
 
 class Problem(BaseModel):
     """Real or percieved problem that the job poster could experience, related to the job description."""
