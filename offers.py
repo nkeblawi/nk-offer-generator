@@ -57,7 +57,6 @@ async def generate_offers(occupation: OfferInput) -> OfferGenerationPack:
         return ValueError
     offer_gen = OfferGenerationModule(anthropic_client)
     offer_gen_solutions = offer_gen(occupation=occupation.occupation)
-
     return offer_gen_solutions
 
 

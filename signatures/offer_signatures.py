@@ -9,18 +9,18 @@ class ProblemGenerationSignature(dspy.Signature):
     problems: list[Problem] = dspy.OutputField()
 
 
-class ObjectionGenerationSignature(dspy.Signature):
-    """Given the main problem, generate a list of top 3 possible objections that the customer may have for why they think they couldn't solve that problem. Order each objection from most common to least common."""
-
-    problem: str = dspy.InputField()
-    objections: list[Objection] = dspy.OutputField()
-
-
 class SubProblemGenerationSignature(dspy.Signature):
     """Break each problem down into 3 steps that the role would have to do or take to be successful."""
 
     problem: str = dspy.InputField()
     sub_problems: list[SubProblem] = dspy.OutputField()
+
+
+class ObjectionGenerationSignature(dspy.Signature):
+    """Given the main problem, generate a list of top 3 possible objections that the customer may have for why they think they couldn't solve that problem. Order each objection from most common to least common."""
+
+    problem: str = dspy.InputField()
+    objections: list[Objection] = dspy.OutputField()
 
 
 class ProblemSolvingSignature(dspy.Signature):
