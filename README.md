@@ -1,6 +1,7 @@
 # Offer Generator and Evaluator
 - This module takes in a current offer, generates more compelling offers, then evaluates
 those compelling offers against Alex Hormozi's Value Framework.
+- Credit to Brandon Phillips for the original idea
 
 ## Prompts
 You will find the prompts in the prompts folder.
@@ -29,6 +30,4 @@ You'll find the Nuxt application here.
     - LANGFUSE_HOST=yourhost
 5. fastapi dev start.py
 6. Open another terminal
-7. cd nuxt-app
-8. npm install
-9. npm run dev
+7. python offers.py

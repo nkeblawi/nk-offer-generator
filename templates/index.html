@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer Creation Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+</head>
+<body>
+    <h1>Offer Creation Tool</h1>
+    <p>Please enter the occupation description (max 1000 characters):</p>
+    <textarea id="occupation" rows="4" cols="50" maxlength="1000"></textarea><br><br>
+    <button onclick="generateOffer()">Generate Offer</button>
+    <div id="loading" style="display: none;">Brainstorming offer ideas... please wait 3-5 minutes...</div>
+    <div id="output"></div>
+
+    <script src="{{ url_for('static', path='/js/script.js') }}"></script>
+</body>
+</html>

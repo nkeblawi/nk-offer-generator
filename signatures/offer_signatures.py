@@ -3,30 +3,29 @@ import dspy
 
 
 class ProblemGenerationSignature(dspy.Signature):
-    """Given the occupation, list all of the perceived and real problems and obstacles that this role could or is currently facing."""
+    """Given the occupation, list the top 3 real problems and obstacles that this role could or is currently facing."""
 
     occupation: str = dspy.InputField()
     problems: list[Problem] = dspy.OutputField()
 
 
 class ObjectionGenerationSignature(dspy.Signature):
-    """Given a problem and sub ploblems, generate a list of all possible objections that the customer may have for why they think they couldn't solve that problem."""
+    """Given the main problem, generate a list of top 3 possible objections that the customer may have for why they think they couldn't solve that problem. Order each objection from most common to least common."""
 
     problem: str = dspy.InputField()
     objections: list[Objection] = dspy.OutputField()
 
 
 class SubProblemGenerationSignature(dspy.Signature):
-    """Given a problem/obstacle
-    Break down the given problem/obstacle into very intricate steps that the job poster would have to do/take in order to be successful.
-    """
+    """Break each problem down into 3 steps that the role would have to do or take to be successful."""
 
     problem: str = dspy.InputField()
     sub_problems: list[SubProblem] = dspy.OutputField()
 
 
 class ProblemSolvingSignature(dspy.Signature):
-    """Given an objection and a problem, generate single sentences on how a single person service provider would deliver a one-on-one solution. Generate solutions for the following delivery methods: done with you, done for you, and done by you solutions for the given objections. Generate 5 solutions for each method.
+    """Write up to 3 single sentences on how a single-person service provider would deliver a one-on-one solution. Each sentence will cover one of the following delivery methods: done with you, done for you, and done by you solutions for the given problem and main objection.
+
     Example:
     Problem: Buying healthy food, and grocery shopping is hard, confusing, i won't like it. I will suck at it.
 
