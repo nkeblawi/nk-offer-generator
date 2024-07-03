@@ -2,6 +2,8 @@
 - This module takes in a current offer, generates more compelling offers, then evaluates
 those compelling offers against Alex Hormozi's Value Framework.
 - Credit to Brandon Phillips for the original idea
+- Forked from https://github.com/PhiBrandon/dspy-nuxt3-offer-creation-framework
+- Repurposed for marketing by changing the inputs and optimizing outputs for speed
 
 ## Prompts
 You will find the prompts in the prompts folder.
