@@ -44,11 +44,13 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 logging.basicConfig(level=logging.ERROR)
 
 
+# Load index.html
 @app.get("/")
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
+# Generate offers
 @app.post("/generate", response_model=OfferGenerationPack)
 async def generate_offers(occupation: OfferInput) -> OfferGenerationPack:
     if occupation.occupation == "":

@@ -33,6 +33,7 @@ async function generateOffer() {
     }
 }
 
+// Not being used yet - being tested in a separate environment
 function formatJSON(jsonData) {
     const dwySolutions = [];
     const dfySolutions = [];
